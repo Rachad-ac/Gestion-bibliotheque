@@ -8,16 +8,16 @@ import org.mapstruct.ReportingPolicy;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE,
         componentModel = "spring" ,
-        uses = {BibliothequeMapper.class , EmployeMapper.class , LivreMapper.class})
+        uses = {AbonneMapper.class , EmployeMapper.class , LivreMapper.class})
 public interface EmpruntMapper extends EntityMapper<EmpruntDTO , EmpruntEntity>{
     @Override
-    @Mapping(source = "utilisateurId", target = "utilisateur.id")
+    @Mapping(source = "abonneId", target = "abonne.id")
     @Mapping(source = "livreId", target = "livre.id")
     @Mapping(source = "employeId", target = "employe.id")
     EmpruntEntity asEntity(EmpruntDTO dto);
 
     @Override
-    @Mapping(source = "utilisateur.id", target = "utilisateurId")
+    @Mapping(source = "abonne.id", target = "abonneId")
     @Mapping(source = "livre.id", target = "livreId")
     @Mapping(source = "employe.id", target = "employeId")
     EmpruntDTO asDto(EmpruntEntity entity);

@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
+import java.util.Date;
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,8 +29,9 @@ public class EmployeDTO {
     private String telephone;
     private String poste;
     private Double salaire;
+    private Date dateEmboche;
 
-    private BibliothequeDTO bibliotheque;
+    private LibreryDTO librery;
 
-    private Long bibliothequeId;
+    private Long libreryId;
 }

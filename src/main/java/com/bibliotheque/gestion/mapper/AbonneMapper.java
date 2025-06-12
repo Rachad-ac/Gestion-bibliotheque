@@ -1,7 +1,7 @@
 package com.bibliotheque.gestion.mapper;
 
-import com.bibliotheque.gestion.entity.EmployeEntity;
-import com.bibliotheque.gestion.model.EmployeDTO;
+import com.bibliotheque.gestion.entity.AbonneEntity;
+import com.bibliotheque.gestion.model.AbonneDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
@@ -9,12 +9,12 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE,
         componentModel = "spring" ,
         uses = {LibreryMapper.class})
-public interface EmployeMapper extends EntityMapper<EmployeDTO , EmployeEntity> {
+public interface AbonneMapper extends EntityMapper<AbonneDTO, AbonneEntity>{
     @Override
     @Mapping(source = "libreryId", target = "librery.id")
-    EmployeEntity asEntity(EmployeDTO dto);
+    AbonneEntity asEntity(AbonneDTO dto);
 
     @Override
     @Mapping(source = "librery.id", target = "libreryId")
-    EmployeDTO asDto(EmployeEntity entity);
+    AbonneDTO asDto(AbonneEntity entity);
 }

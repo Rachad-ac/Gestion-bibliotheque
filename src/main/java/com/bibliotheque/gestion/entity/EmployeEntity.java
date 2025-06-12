@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Data
 @Table(name = "employes")
@@ -16,8 +18,6 @@ public class EmployeEntity extends PersonneEntity{
     private String poste;
     @Column(name = "salaire")
     private Double salaire;
-
-    @ManyToOne
-    @JoinColumn(name = "bibliotheque_id")
-    private BibliothequeEntity bibliotheque;
+    @Column(name = "date_emboche")
+    private Date dateEmboche;
 }

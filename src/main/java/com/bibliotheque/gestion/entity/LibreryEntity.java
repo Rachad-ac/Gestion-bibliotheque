@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "bibliotheques")
+@Table(name = "librery")
 @AllArgsConstructor
 @NoArgsConstructor
-public class BibliothequeEntity {
+public class LibreryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

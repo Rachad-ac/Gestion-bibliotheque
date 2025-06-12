@@ -1,6 +1,6 @@
 package com.bibliotheque.gestion.entity;
 
-import com.bibliotheque.gestion.entity.enums.NationalieType;
+import com.bibliotheque.gestion.entity.enums.NationaliteType;
 import com.bibliotheque.gestion.entity.enums.SexeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,7 +30,7 @@ public class AuteurEntity {
     private Date dateNaiss;
     @Enumerated(EnumType.STRING)
     @Column(name = "nationalite")
-    private NationalieType nationalite;
+    private NationaliteType nationalite;
 
 
 }

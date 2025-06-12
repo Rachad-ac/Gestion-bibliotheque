@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Data
 @Table(name = "livres")
@@ -20,11 +22,13 @@ public class LivreEntity {
     @Column(name = "nom_auteur")
     private String nomAuteur;
     @Column(name = "disponibilite")
-    private Boolean disponibilite;
+    private Boolean disponibilite = true;
     @Column(name = "nombre_pages")
     private Integer nbrPages;
+    @Column(name = "priix")
+    private double prix;
     @Column(name = "date_publication")
-    private Integer datePub;
+    private Date datePub;
 
     @ManyToOne
     @JoinColumn(name = "auteur_id")
@@ -32,5 +36,5 @@ public class LivreEntity {
 
     @ManyToOne
     @JoinColumn(name = "bibliotheque_id")
-    private BibliothequeEntity bibliotheque;
+    private LibreryEntity bibliotheque;
 }

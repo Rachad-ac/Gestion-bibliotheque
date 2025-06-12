@@ -14,7 +14,5 @@ public interface LivreService {
     void deleteLivre(Long id);
     LivreDTO getLivre(Long id);
     Page<LivreDTO> getAllLivre(Map<String, String> searchParams, Pageable pageable);
-    Page<LivreDTO> getAllLivreBibliotheque(Map<String, String> searchParams, Pageable pageable, Long idBibliotheque);
-    Page<LivreEntity> findByBibliothequeId(Long id, Pageable pageable);
 
 }

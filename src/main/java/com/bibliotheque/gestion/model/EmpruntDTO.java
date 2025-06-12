@@ -25,11 +25,11 @@ public class EmpruntDTO {
     private Date dateRetour;
     private boolean estRendu;
 
-    private UtilisateurDTO utilisateur;
+    private AbonneDTO abonne;
     private EmployeDTO employe;
     private LivreDTO livre;
 
-    private Long utilisateurId;
+    private Long abonneId;
     private Long livreId;
     private Long employeId;
 

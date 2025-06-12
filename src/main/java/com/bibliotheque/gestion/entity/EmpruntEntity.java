@@ -28,8 +28,8 @@ public class EmpruntEntity {
     private LivreEntity livre;
 
     @ManyToOne
-    @JoinColumn(name = "utilisateur_id")
-    private UtilisateurEntity utilisateur;
+    @JoinColumn(name = "abonne_id")
+    private AbonneEntity abonne;
 
     @ManyToOne
     @JoinColumn(name = "employe_id")

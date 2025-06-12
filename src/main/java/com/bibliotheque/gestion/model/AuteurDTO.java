@@ -1,6 +1,6 @@
 package com.bibliotheque.gestion.model;
 
-import com.bibliotheque.gestion.entity.enums.NationalieType;
+import com.bibliotheque.gestion.entity.enums.NationaliteType;
 import com.bibliotheque.gestion.entity.enums.SexeType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -26,5 +26,5 @@ public class AuteurDTO {
     private String prenom;
     private SexeType sexe;
     private Date dateNaiss;
-    private NationalieType nationalite;
+    private NationaliteType nationalite;
 }

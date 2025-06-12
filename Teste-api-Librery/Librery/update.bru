@@ -1,0 +1,22 @@
+meta {
+  name: update
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:2000/api/librery/9
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      
+        "nom": "Bibliothèque de l'École Nationale d'Administration (ENA)",
+        "adresse" : "Dakar, Ouest Foire",
+        "ville": "Dakar",
+        "email": "bibliotheque@ena.sn",
+        "tel": "+221 33 825 87 65"
+      }
+}

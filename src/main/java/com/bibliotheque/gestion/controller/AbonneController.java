@@ -1,8 +1,8 @@
 package com.bibliotheque.gestion.controller;
 
-import com.bibliotheque.gestion.model.EmpruntDTO;
+import com.bibliotheque.gestion.model.AbonneDTO;
 import com.bibliotheque.gestion.model.Response;
-import com.bibliotheque.gestion.services.EmpruntService;
+import com.bibliotheque.gestion.services.AbonneService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -11,28 +11,28 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Map;
 
+
 @RestController
-@RequestMapping("emprunt")
+@RequestMapping("abonne")
 @RequiredArgsConstructor
 @CrossOrigin("*")
-public class EmpruntController {
+public class AbonneController {
 
-    private final EmpruntService empruntService;
+    private final AbonneService abonneService;
 
-    @Operation(summary = "Create emprunt", description = "this endpoint takes input emprunt and saves it")
+    @Operation(summary = "Create abonne", description = "this endpoint takes input abonne and saves it")
     @ApiResponses(value = {@ApiResponse(responseCode = "201",
             description = "Success"), @ApiResponse(responseCode = "400",
             description = "Request sent by the client was syntactically incorrect"),
             @ApiResponse(responseCode = "500", description = "Internal server error during request processing")})
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public Response<Object> createEmprunt(@RequestBody EmpruntDTO empruntDTO) {
+    public Response<Object> createAbonne(@RequestBody AbonneDTO abonneDTO) {
         try {
-            var dto = empruntService.createEmprunt(empruntDTO);
-            return Response.ok().setPayload(dto).setMessage("emprunt créé");
+            var dto = abonneService.createAbonne(abonneDTO);
+            return Response.ok().setPayload(dto).setMessage("abonne créé");
         } catch (Exception ex) {
             return Response.badRequest().setMessage(ex.getMessage());
         }
@@ -40,60 +40,62 @@ public class EmpruntController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Response<Object> updateEmprunt(@Parameter(name = "id", description = "the emprunt id to updated")
+    public Response<Object> updateAbonne(@Parameter(name = "id", description = "the abonne id to updated")
                                           @PathVariable("id") Long id,
-                                          @RequestBody EmpruntDTO empruntDTO) {
-        empruntDTO.setId(id);
+                                          @RequestBody AbonneDTO abonneDTO) {
+        abonneDTO.setId(id);
         try {
-            var dto = empruntService.updateEmprunt(empruntDTO);
-            return Response.ok().setPayload(dto).setMessage("emprunt modifié");
+            var dto = abonneService.updateAbonne(abonneDTO);
+            return Response.ok().setPayload(dto).setMessage("abonne modifié");
         } catch (Exception ex) {
             return Response.badRequest().setMessage(ex.getMessage());
         }
 
     }
 
-    @Operation(summary = "Read the emprunt", description = "This endpoint is used to read emprunt, it takes input id emprunt")
+    @Operation(summary = "Read the abonne", description = "This endpoint is used to read abonne, it takes input id abonne")
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "400", description = "Request sent by the client was syntactically incorrect"),
             @ApiResponse(responseCode = "404", description = "Resource access does not exist"),
             @ApiResponse(responseCode = "500", description = "Internal server error during request processing")})
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Response<Object> getEmprunt(@Parameter(name = "id", description = "the type emprunt id to valid") @PathVariable Long id) {
+    public Response<Object> getAbonne(@Parameter(name = "id", description = "the type abonne id to valid") @PathVariable Long id) {
         try {
-            var dto = empruntService.getEmprunt(id);
-            return Response.ok().setPayload(dto).setMessage("emprunt trouvé");
+            var dto = abonneService.getAbonne(id);
+            return Response.ok().setPayload(dto).setMessage("abonne trouvé");
         } catch (Exception ex) {
             return Response.badRequest().setMessage(ex.getMessage());
         }
     }
 
-    @Operation(summary = "Read all emprunt", description = "It takes input param of the page and returns this list related")
+    @Operation(summary = "Read all abonne", description = "It takes input param of the page and returns this list related")
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "500", description = "Internal server error during request processing")})
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
-    public Response<Object> getAllEmprunt(@RequestParam Map<String, String> searchParams, Pageable pageable) {
-        var page = empruntService.getAllEmprunt(searchParams, pageable);
+    public Response<Object> getAllAbonne(@RequestParam Map<String, String> searchParams, Pageable pageable) {
+        var page = abonneService.getAllAbonne(searchParams, pageable);
         Response.PageMetadata metadata = Response.PageMetadata.builder()
                 .number(page.getNumber()).totalElements(page.getTotalElements())
                 .size(page.getSize()).totalPages(page.getTotalPages()).build();
         return Response.ok().setPayload(page.getContent()).setMetadata(metadata);
     }
 
-    @Operation(summary = "delete the emprunt", description = "Delete emprunt, it takes input id emprunt")
+
+    @Operation(summary = "delete the abonne", description = "Delete abonne, it takes input id abonne")
     @ApiResponses(value = {@ApiResponse(responseCode = "204", description = "No content"),
             @ApiResponse(responseCode = "400", description = "Request sent by the client was syntactically incorrect"),
             @ApiResponse(responseCode = "404", description = "Resource access does not exist"),
             @ApiResponse(responseCode = "500", description = "Internal server error during request processing")})
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteEmprunt(@PathVariable("id") Long id) {
+    public void deleteAbonne(@PathVariable("id") Long id) {
         try {
-            empruntService.deleteEmprunt(id);
+            abonneService.deleteAbonne(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
+
 }

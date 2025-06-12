@@ -1,0 +1,22 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:2000/api/librery
+  body: json
+  auth: inherit
+}
+
+body:json {
+  
+    {
+      "nom": "Maison de la Culture Douta Seck",
+      "adresse": "Grand Yoff, Dakar Région",
+      "ville": "Dakar",
+      "email": "contact@maisondoutaseck.org",
+      "tel": "+221 33 837 00 00"
+    }
+}

@@ -7,11 +7,8 @@ import java.util.Map;
 
 public interface EmpruntService {
     EmpruntDTO createEmprunt(EmpruntDTO empruntDTO);
-    EmpruntDTO updateEmprunt(EmpruntDTO empruntDTO);
-    void deleteEmprunt(Long id);
-    void rendreEmprunt(Long id);
     EmpruntDTO getEmprunt(Long id);
+    void deleteEmprunt(Long id);
+    EmpruntDTO updateEmprunt(EmpruntDTO empruntDTO);
     Page<EmpruntDTO> getAllEmprunt(Map<String, String> searchParams, Pageable pageable);
-    Page<EmpruntDTO> getAllEmpruntBibliotheque(Map<String, String> searchParams, Pageable pageable, Long idBibliotheque);
-
 }

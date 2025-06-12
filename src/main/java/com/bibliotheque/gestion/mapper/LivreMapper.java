@@ -8,7 +8,7 @@ import org.mapstruct.ReportingPolicy;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE,
         componentModel = "spring" ,
-        uses = {BibliothequeMapper.class , AuteurMapper.class})
+        uses = {LibreryMapper.class , AuteurMapper.class})
 public interface LivreMapper extends EntityMapper<LivreDTO , LivreEntity> {
     @Override
     @Mapping(source = "bibliothequeId", target = "bibliotheque.id")

@@ -28,4 +28,8 @@ public abstract class PersonneEntity {
     private String email;
     @Column(name = "telephone" , unique = true)
     private String telephone;
+
+    @ManyToOne()
+    @JoinColumn(name = "librery_id" )
+    private LibreryEntity librery;
 }

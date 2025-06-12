@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
+import java.util.Date;
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,9 +28,10 @@ public class LivreDTO {
     private String nomAuteur;
     private Boolean disponibilite;
     private Integer nbrPages;
-    private Integer datePub;
+    private double prix;
+    private Date datePub;
 
-    private BibliothequeDTO bibliotheque;
+    private LibreryDTO bibliotheque;
     private AuteurDTO auteur;
 
     private Long auteurId;
