@@ -31,10 +31,10 @@ public class LivreDTO {
     private double prix;
     private Date datePub;
 
-    private LibreryDTO bibliotheque;
+    private LibreryDTO librery;
     private AuteurDTO auteur;
 
     private Long auteurId;
-    private Long bibliothequeId;
+    private Long libreryId;
 
 }

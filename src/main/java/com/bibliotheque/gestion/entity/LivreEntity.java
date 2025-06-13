@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -35,6 +36,9 @@ public class LivreEntity {
     private AuteurEntity auteur;
 
     @ManyToOne
-    @JoinColumn(name = "bibliotheque_id")
-    private LibreryEntity bibliotheque;
+    @JoinColumn(name = "librery_id")
+    private LibreryEntity librery;
+
+    @OneToMany(mappedBy = "livre")
+    private List<EmpruntEntity> emprunt;
 }

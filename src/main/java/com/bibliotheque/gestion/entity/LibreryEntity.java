@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "librery")
@@ -25,5 +27,16 @@ public class LibreryEntity {
     private  String email;
     @Column(name = "telephone")
     private String tel;
+
+    @OneToMany(mappedBy = "librery")
+    private List<EmployeEntity> employe;
+
+    @OneToMany(mappedBy = "librery")
+    private List<AbonneEntity> abonne;
+
+    @OneToMany(mappedBy = "librery")
+    private List<LivreEntity> livre;
+
+
 
 }

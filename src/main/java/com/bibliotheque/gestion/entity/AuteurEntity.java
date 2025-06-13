@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -32,5 +33,7 @@ public class AuteurEntity {
     @Column(name = "nationalite")
     private NationaliteType nationalite;
 
+    @OneToMany(mappedBy = "auteur")
+    private List<LivreEntity> livre;
 
 }

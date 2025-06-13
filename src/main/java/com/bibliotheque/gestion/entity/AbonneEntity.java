@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,5 +17,9 @@ public class AbonneEntity extends  PersonneEntity{
 
     @Column(name = "date_inscription")
     private Date dateInscri;
+
+    @OneToMany(mappedBy = "abonne")
+    private List<EmpruntEntity> emprunt;
+
 
 }

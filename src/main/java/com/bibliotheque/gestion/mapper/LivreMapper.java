@@ -11,12 +11,12 @@ import org.mapstruct.ReportingPolicy;
         uses = {LibreryMapper.class , AuteurMapper.class})
 public interface LivreMapper extends EntityMapper<LivreDTO , LivreEntity> {
     @Override
-    @Mapping(source = "bibliothequeId", target = "bibliotheque.id")
+    @Mapping(source = "libreryId", target = "librery.id")
     @Mapping(source = "auteurId", target = "auteur.id")
     LivreEntity asEntity(LivreDTO dto);
 
     @Override
-    @Mapping(source = "bibliotheque.id", target = "bibliothequeId")
+    @Mapping(source = "librery.id", target = "libreryId")
     @Mapping(source = "auteur.id", target = "auteurId")
     LivreDTO asDto(LivreEntity entity);
 }

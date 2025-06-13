@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,4 +21,7 @@ public class EmployeEntity extends PersonneEntity{
     private Double salaire;
     @Column(name = "date_emboche")
     private Date dateEmboche;
+
+    @OneToMany(mappedBy = "employe")
+    private List<EmpruntEntity> emprunt;
 }

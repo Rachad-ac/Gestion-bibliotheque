@@ -5,7 +5,7 @@ server:
 
 spring:
   datasource:
-    name: ${DB_NAME:biblio-db}
+    name: ${DB_NAME:library-db}
     host: ${DB_HOST:127.0.0.1}
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:}
