@@ -1,5 +1,5 @@
 ## 📚 Gestion Bibliothèque – API REST
-** Gestion Bibliothèque est une API REST développée avec Spring Boot permettant de gérer : **
+**Gestion Bibliothèque est une API REST développée avec Spring Boot permettant de gérer :**
 - Les utilisateurs (lecteurs, bibliothécaires, administrateurs)
 - Les livres
 - Les auteurs
